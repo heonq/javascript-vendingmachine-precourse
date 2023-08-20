@@ -21,3 +21,46 @@ export const CONSTANTS = Object.freeze({
   holdingAmount: '보유 금액: ',
   holdingCoinStatus: '동전 보유 현황',
 });
+
+export const IDS = Object.freeze({
+  purchaseTabButton: 'product-purchase-menu',
+  chargingTabButton: 'vending-machine-manage-menu',
+  manageProductTabButton: 'product-add-menu',
+  productNameInput: 'product-name-input',
+  productPriceInput: 'product-price-input',
+  productQuantityInput: 'product-quantity-input',
+  addProductButton: 'product-add-button',
+  vendingMachineChargeInput: 'vending-machine-charge-input',
+  vendingMachineChargeButton: 'vending-machine-charge-button',
+  vendingMachineChargeAmount: 'vending-machine-charge-amount',
+  vendingMachineCoin500Quantity: 'vending-machine-coin-500-quantity',
+  vendingMachineCoin100Quantity: 'vending-machine-coin-100-quantity',
+  vendingMachinecoin50Quantity: 'vending-machine-coin-50-quantity',
+  vendingMachinecoin10Quantity: 'vending-machine-coin-10-quantity',
+  chargeInput: 'charge-input',
+  chargeButton: 'charge-button',
+  chargeAmount: 'charge-amount',
+  returnButton: 'coin-return-button',
+  coin500Quantity: 'coin-500-quantity',
+  coin100Quantity: 'coin-100-quantity',
+  coin50Quantity: 'coin-50-quantity',
+  coin10Quantity: 'coin-10-quantity',
+});
+
+export const CLASSES = Object.freeze({
+  productList: 'product-manage-item',
+  productName: 'product-manage-name',
+  productPrice: 'product-manage-price',
+  productQuantity: 'product-manage-quantity',
+  productPurchaseItem: 'product-purchase-item',
+  purchaseButton: 'purchase-button',
+  productPurchaseName: 'product-purchase-name',
+  productPurchasePrice: 'product-purchase-price',
+  productQuantity: 'product-purchase-quantity',
+});
+
+export const DATASETS = Object.freeze({
+  productName: 'data-product-name',
+  price: 'data-product-price',
+  quantity: 'data-product-quantity',
+});
