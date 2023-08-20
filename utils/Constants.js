@@ -20,12 +20,17 @@ export const CONSTANTS = Object.freeze({
   charge: '충전하기',
   holdingAmount: '보유 금액: ',
   holdingCoinStatus: '동전 보유 현황',
+  coin500: '500원',
+  coin100: '100원',
+  coin50: '50원',
+  coin10: '10원',
 });
 
 export const IDS = Object.freeze({
   purchaseTabButton: 'product-purchase-menu',
   chargingTabButton: 'vending-machine-manage-menu',
   manageProductTabButton: 'product-add-menu',
+  container: 'container',
   productManageForm: 'product-manage-form',
   productNameInput: 'product-name-input',
   productPriceInput: 'product-price-input',
