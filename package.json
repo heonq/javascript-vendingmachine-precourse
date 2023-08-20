@@ -4,7 +4,13 @@
   "description": "우아한테크코스 프리코스 자판기 미션",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "8.7.0"
+    "cypress": "8.7.0",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "scripts": {
     "test": "cypress run --browser chrome"
