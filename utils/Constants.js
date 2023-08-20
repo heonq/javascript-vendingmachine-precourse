@@ -24,6 +24,7 @@ export const CONSTANTS = Object.freeze({
   coin100: '100원',
   coin50: '50원',
   coin10: '10원',
+  productKey: 'product',
 });
 
 export const IDS = Object.freeze({

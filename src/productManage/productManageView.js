@@ -1,5 +1,6 @@
 import { productManageComponent } from './productManageComponent';
-import { CLASSES } from '../../utils/Constants';
+import { CLASSES, IDS } from '../../utils/Constants';
+import { $ } from '../../utils';
 
 export const productManageView = {
   addProductTable(products) {
@@ -17,6 +18,9 @@ export const productManageView = {
 
   printProductManageComponent(products) {
     $(`#${IDS.container}`).innerHTML = productManageComponent;
-    addProductTable(products);
+    this.addProductTable(products);
+  },
+  handleSubmit(productManage) {
+    $(`#${IDS.addProductButton}`).addEventListener('click', productManage.storeProduct);
   },
 };
