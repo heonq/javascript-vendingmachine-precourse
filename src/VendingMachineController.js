@@ -14,6 +14,7 @@ export default class VendingMachineController {
   init() {
     this.renderMainComponents();
     this.renderProductManage();
+    this.handleButtons();
   }
 
   renderMainComponents() {
@@ -24,5 +25,8 @@ export default class VendingMachineController {
     this.#productManage.getFromStore();
     productManageView.printProductManageComponent(this.#productManage.getProducts());
     productManageView.handleSubmit(this.#productManage);
+  }
+  handleButtons() {
+    tabButtonsView.handleProductManageButton(this.renderProductManage.bind(this));
   }
 }
