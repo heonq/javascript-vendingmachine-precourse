@@ -9,4 +9,7 @@ export const tabButtonsView = {
   handleProductManageButton(callback) {
     $(`#${IDS.manageProductTabButton}`).addEventListener('click', callback);
   },
+  handleVendingMachineChargeButton(callback) {
+    $(`#${IDS.chargingTabButton}`).addEventListener('click', callback);
+  },
 };
