@@ -6,4 +6,10 @@ export const vendingMachineChargeView = {
   printVendingMachineChargeComponent() {
     $(`#${IDS.container}`).innerHTML = vendingMachineChargeComponent;
   },
+  handleSubmit(vendingMachineCharge) {
+    $(`#${IDS.vendingMachineChargeButton}`).addEventListener(
+      'click',
+      vendingMachineCharge.charge.bind(vendingMachineCharge),
+    );
+  },
 };
