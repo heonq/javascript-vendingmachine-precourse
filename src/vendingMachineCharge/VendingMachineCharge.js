@@ -4,32 +4,56 @@ import { $ } from '../../utils/index.js';
 
 export default class VendingMachineCharge {
   #holdingAmount;
-  #coinCount;
+  #coinQuantity;
 
   constructor() {
     this.#holdingAmount = 0;
-    this.#coinCount = {
-      [CONSTANTS.coin500]: 0,
-      [CONSTANTS.coin100]: 0,
-      [CONSTANTS.coin50]: 0,
-      [CONSTANTS.coin10]: 0,
+    this.#coinQuantity = {
+      [CONSTANTS.number500]: 0,
+      [CONSTANTS.number100]: 0,
+      [CONSTANTS.number50]: 0,
+      [CONSTANTS.number10]: 0,
     };
   }
 
-  charge() {
+  getAmountFromStore() {
     if (Store.getItem(CONSTANTS.holdingAmountKey))
       this.#holdingAmount = Store.getItem(CONSTANTS.holdingAmountKey);
-    this.#holdingAmount += Number($(`#${IDS.vendingMachineChargeInput}`).value);
+  }
+
+  setAMountOnStore() {
     Store.setItem(CONSTANTS.holdingAmountKey, this.#holdingAmount);
   }
 
+  chargeAmount(amount) {
+    this.getAmountFromStore();
+    this.#holdingAmount += amount;
+    this.setAMountOnStore();
+  }
+
+  getCoinQuantityFromStore() {
+    if (Store.getItem(CONSTANTS.coinQuantityKey))
+      this.#coinQuantity = Store.getItem(CONSTANTS.coinQuantityKey);
+  }
+
+  setCoinQuantityonStore() {
+    Store.setItem(CONSTANTS.coinQuantityKey, this.#coinQuantity);
+  }
+
   getRandomCoin(amount) {
+    this.getCoinQuantityFromStore();
     let leftOver = amount;
     while (leftOver > 0) {
-      const randomNumber = Random.pickNumberInList([10, 50, 100, 500]);
+      const randomNumber = MissionUtils.Random.pickNumberInList([10, 50, 100, 500]);
       if (randomNumber > leftOver) continue;
-      this.#coinCOunt[`CONSTANTS.coin${randomNumber}`] += 1;
+      this.#coinQuantity[randomNumber] += 1;
       leftOver -= randomNumber;
     }
+    this.setCoinQuantityonStore();
+  }
+  handleVendingMachineCharge() {
+    const amount = Number($(`#${IDS.vendingMachineChargeInput}`).value);
+    this.chargeAmount(amount);
+    this.getRandomCoin(amount);
   }
 }

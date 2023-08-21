@@ -9,7 +9,7 @@ export const vendingMachineChargeView = {
   handleSubmit(vendingMachineCharge) {
     $(`#${IDS.vendingMachineChargeButton}`).addEventListener(
       'click',
-      vendingMachineCharge.charge.bind(vendingMachineCharge),
+      vendingMachineCharge.handleVendingMachineCharge.bind(vendingMachineCharge),
     );
   },
 };

@@ -46,4 +46,11 @@ export default class VendingMachineController {
     tabButtonsView.handleProductManageButton(this.renderProductManage.bind(this));
     tabButtonsView.handleVendingMachineChargeButton(this.renderVendingMachineCharge.bind(this));
   }
+
+  handleVendingMachineCharge() {
+    const amount = Number($(`#${IDS.vendingMachineChargeInput}`).value);
+    console.log(amount);
+    this.#vendingMachineCharge.charge(amount);
+    this.#vendingMachineCharge.getRandomCoin(amount);
+  }
 }
