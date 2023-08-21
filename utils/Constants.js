@@ -27,12 +27,17 @@ export const CONSTANTS = Object.freeze({
   productsKey: 'products',
   minPrice: 100,
   priceUnit: 10,
+  holdingAmountKey: 'holdingAmount',
+  coinQuantityKey: 'coinQuantity',
 });
 
 export const IDS = Object.freeze({
   purchaseTabButton: 'product-purchase-menu',
   chargingTabButton: 'vending-machine-manage-menu',
   manageProductTabButton: 'product-add-menu',
+  productPurchaseContainer: 'product-purchase-container',
+  vendingMachineContainer: 'vending-machine-container',
+  productManageContainer: 'product-manage-container',
   container: 'container',
   productManageForm: 'product-manage-form',
   productNameInput: 'product-name-input',

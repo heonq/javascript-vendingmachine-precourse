@@ -1,6 +1,6 @@
 import { CONSTANTS, IDS } from '../../utils/Constants.js';
 
-export const productPurchaseComponent = `
+export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer}">
 <p>${CONSTANTS.insertCoin}</p>
 <input id="${IDS.chargeInput}" value="number" />
 <button id="${IDS.chargeButton}">${CONSTANTS.insert}</button>
@@ -33,5 +33,5 @@ export const productPurchaseComponent = `
 <td>${CONSTANTS.coin10}</td>
 <td id="${IDS.coin100Quantity}"></td>
 </tr>
-</table>
+</table></div>
 `;

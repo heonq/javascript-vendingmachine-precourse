@@ -1,6 +1,6 @@
 import { CONSTANTS, IDS } from '../../utils/Constants.js';
 
-export const vendingMachineChargeComponent = `<form>
+export const vendingMachineChargeComponent = `<div id=${IDS.vendingMachineContainer}><form>
 <p>${CONSTANTS.chargeVendingMachine}</p>
 <input id="${IDS.vendingMachineChargeInput}" type="number"/>
 <button id="${IDS.vendingMachineChargeButton}">${CONSTANTS.charge}</button>
@@ -26,5 +26,5 @@ export const vendingMachineChargeComponent = `<form>
     <td>${CONSTANTS.coin10}</td>
     <td id="${IDS.coin10Quantity}"></td>
     </tr>
-</table>
+</table></div>
 `;

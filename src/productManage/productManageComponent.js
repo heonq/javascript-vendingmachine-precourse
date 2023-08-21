@@ -1,6 +1,6 @@
 import { CONSTANTS, IDS } from '../../utils/Constants.js';
 
-export const productManageComponent = `<div id="product-manage"><p>${CONSTANTS.addProduct}</p>
+export const productManageComponent = `<div id="${IDS.productManageContainer}"><p>${CONSTANTS.addProduct}</p>
     <form id="${IDS.productManageForm}">
     <input id="${IDS.productNameInput}" type="text" placeholder="${CONSTANTS.productName}"/>
     <input id="${IDS.productPriceInput}" type="number" placeholder="${CONSTANTS.price}"/>
