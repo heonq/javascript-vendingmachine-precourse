@@ -1,7 +1,7 @@
-import { $ } from '../../utils';
-import { IDS, CONSTANTS } from '../../utils/Constants';
-import { Store } from '../../utils/Store';
-import { Validator } from '../../utils/Validator';
+import { $ } from '../../utils/index.js';
+import { IDS, CONSTANTS } from '../../utils/Constants.js';
+import { Store } from '../../utils/Store.js';
+import { Validator } from '../../utils/Validator.js';
 
 export default class ProductManage {
   #products;
@@ -10,7 +10,7 @@ export default class ProductManage {
   }
 
   storeProduct() {
-    if (Store.getItem(CONSTANTS.productsKey)) this.#products = Store.getItem(CONSTANTS.productsKey);
+    if (Store.getItem(CONSTANTS.productsKey)) this.#products = this.getFromStore();
     const [name, price, quantity] = [
       $(`#${IDS.productNameInput}`).value,
       $(`#${IDS.productPriceInput}`).value,

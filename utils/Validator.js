@@ -1,4 +1,4 @@
-import { ERROR_MESSAGE, CONSTANTS } from './Constants';
+import { ERROR_MESSAGE, CONSTANTS } from './Constants.js';
 
 export const Validator = {
   validateProductPrice(price) {

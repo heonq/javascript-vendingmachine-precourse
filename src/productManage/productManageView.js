@@ -1,6 +1,6 @@
-import { productManageComponent } from './productManageComponent';
-import { CLASSES, IDS } from '../../utils/Constants';
-import { $ } from '../../utils';
+import { productManageComponent } from './productManageComponent.js';
+import { CLASSES, IDS } from '../../utils/Constants.js';
+import { $ } from '../../utils/index.js';
 
 export const productManageView = {
   addProductTable(products) {

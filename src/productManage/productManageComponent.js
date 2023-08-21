@@ -1,4 +1,4 @@
-import { CONSTANTS, IDS } from '../../utils/Constants';
+import { CONSTANTS, IDS } from '../../utils/Constants.js';
 
 export const productManageComponent = `<div id="product-manage"><p>${CONSTANTS.addProduct}</p>
     <form id="${IDS.productManageForm}">

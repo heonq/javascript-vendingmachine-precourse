@@ -1,5 +1,5 @@
 import { productPurchaseComponent } from './productPurchaseComponent.js';
-import { $ } from '../../utils.js';
+import { $ } from '../../utils/index.js';
 import { CONSTANTS, CLASSES, IDS, DATASETS } from '../../utils/Constants.js';
 
 export const ProductPurchaseView = {
