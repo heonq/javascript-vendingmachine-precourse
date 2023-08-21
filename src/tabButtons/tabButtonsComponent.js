@@ -1,4 +1,4 @@
-import { IDS } from '../../utils/Constants';
+import { IDS } from '../../utils/Constants.js';
 
 export const tabButtonsComponent = `<div>
 <button id="${IDS.manageProductTabButton}">상품 관리</button>

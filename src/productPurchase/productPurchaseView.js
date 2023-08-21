@@ -1,6 +1,6 @@
-import { productPurchaseComponent } from './productPurchaseComponent';
-import { $ } from '../../utils';
-import { CONSTANTS, CLASSES, IDS, DATASETS } from '../../utils/Constants';
+import { productPurchaseComponent } from './productPurchaseComponent.js';
+import { $ } from '../../utils.js';
+import { CONSTANTS, CLASSES, IDS, DATASETS } from '../../utils/Constants.js';
 
 export const ProductPurchaseView = {
   addAvailableProductTable(products) {
