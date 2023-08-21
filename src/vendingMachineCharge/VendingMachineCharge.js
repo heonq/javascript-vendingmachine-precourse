@@ -22,4 +22,14 @@ export default class VendingMachineCharge {
     this.#holdingAmount += Number($(`#${IDS.vendingMachineChargeInput}`).value);
     Store.setItem(CONSTANTS.holdingAmountKey, this.#holdingAmount);
   }
+
+  getRandomCoin(amount) {
+    let leftOver = amount;
+    while (leftOver > 0) {
+      const randomNumber = Random.pickNumberInList([10, 50, 100, 500]);
+      if (randomNumber > leftOver) continue;
+      this.#coinCOunt[`CONSTANTS.coin${randomNumber}`] += 1;
+      leftOver -= randomNumber;
+    }
+  }
 }
