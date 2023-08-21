@@ -9,14 +9,13 @@ export default class ProductManage {
   }
 
   storeProduct() {
-    if (Store.getItem(products));
-    this.#products = Store.getItem(CONSTANTS.productKey);
+    if (Store.getItem(CONSTANTS.productsKey)) this.#products = Store.getItem(CONSTANTS.productsKey);
     const [name, price, quantity] = [
       $(`#${IDS.productNameInput}`).value,
       $(`#${IDS.productPriceInput}`).value,
       $(`#${IDS.productQuantityInput}`).value,
     ];
     this.#products.push({ name, price, quantity });
-    Store.setItem(CONSTANTS.productKey, this.#products);
+    Store.setItem(CONSTANTS.productsKey, this.#products);
   }
 }
