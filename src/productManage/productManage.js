@@ -1,6 +1,7 @@
 import { $ } from '../../utils';
 import { IDS, CONSTANTS } from '../../utils/Constants';
 import { Store } from '../../utils/Store';
+import { Validator } from '../../utils/Validator';
 
 export default class ProductManage {
   #products;
@@ -15,6 +16,7 @@ export default class ProductManage {
       $(`#${IDS.productPriceInput}`).value,
       $(`#${IDS.productQuantityInput}`).value,
     ];
+    if (!Validator.validateProductPrice(price)) return;
     this.#products.push({ name, price, quantity });
     Store.setItem(CONSTANTS.productsKey, this.#products);
   }

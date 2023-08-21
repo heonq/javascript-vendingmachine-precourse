@@ -25,6 +25,8 @@ export const CONSTANTS = Object.freeze({
   coin50: '50원',
   coin10: '10원',
   productsKey: 'products',
+  minPrice: 100,
+  priceUnit: 10,
 });
 
 export const IDS = Object.freeze({
@@ -73,4 +75,9 @@ export const DATASETS = Object.freeze({
   productName: 'data-product-name',
   price: 'data-product-price',
   quantity: 'data-product-quantity',
+});
+
+export const ERROR_MESSAGE = Object.freeze({
+  lessThanMin: `가격은 최소 ${CONSTANTS.minPrice}원 이상이어야 합니다.`,
+  notDividedByUnit: `가격은 ${CONSTANTS.priceUnit}원으로 나누어 떨어져야 합니다.`,
 });
