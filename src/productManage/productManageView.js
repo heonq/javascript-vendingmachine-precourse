@@ -21,6 +21,9 @@ export const productManageView = {
     this.addProductTable(products);
   },
   handleSubmit(productManage) {
-    $(`#${IDS.addProductButton}`).addEventListener('click', productManage.storeProduct);
+    $(`#${IDS.addProductButton}`).addEventListener(
+      'click',
+      productManage.storeProduct.bind(productManage),
+    );
   },
 };
