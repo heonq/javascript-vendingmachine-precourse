@@ -1,19 +1,21 @@
-import { productManageComponent } from './productManageComponent.js';
+import { productManageComponent, tableComponent } from './productManageComponent.js';
 import { CLASSES, IDS } from '../../utils/Constants.js';
 import { $ } from '../../utils/index.js';
 
 export const productManageView = {
   addProductTable(products) {
-    const tableContent = products
-      .map((product) => {
-        return `<tr class="${CLASSES.productList}">
+    const tableContent =
+      tableComponent +
+      products
+        .map((product) => {
+          return `<tr class="${CLASSES.productList}">
           <td class="${CLASSES.productName}">${product.name}</td>
           <td class="${CLASSES.productPrice}">${product.price}</td>
           <td class="${CLASSES.productQuantity}">${product.quantity}</td>
           </tr>`;
-      })
-      .join('');
-    $(`#${IDS.productManageTable}`).insertAdjacentHTML('beforeend', tableContent);
+        })
+        .join('');
+    $(`#${IDS.productManageTable}`).innerHTML = tableContent;
   },
 
   printProductManageComponent(products) {
@@ -21,9 +23,9 @@ export const productManageView = {
     this.addProductTable(products);
   },
   handleSubmit(productManage) {
-    $(`#${IDS.addProductButton}`).addEventListener(
-      'click',
-      productManage.storeProduct.bind(productManage),
-    );
+    $(`#${IDS.addProductButton}`).addEventListener('click', () => {
+      productManage.storeProduct();
+      this.addProductTable(productManage.getProducts());
+    });
   },
 };

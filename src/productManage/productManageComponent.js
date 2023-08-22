@@ -9,8 +9,11 @@ export const productManageComponent = `<div id="${IDS.productManageContainer}"><
     </form>
     <p>${CONSTANTS.productStatus}</p>
     <table id="${IDS.productManageTable}">
-    <th>${CONSTANTS.productName}</th>
-    <th>${CONSTANTS.price}</th>
-    <th>${CONSTANTS.quantity}</th>
     </table>
     </div>`;
+
+export const tableComponent = `
+<th>${CONSTANTS.productName}</th>
+<th>${CONSTANTS.price}</th>
+<th>${CONSTANTS.quantity}</th>
+`;
