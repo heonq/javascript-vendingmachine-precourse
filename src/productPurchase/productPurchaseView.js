@@ -6,21 +6,16 @@ export const ProductPurchaseView = {
   addAvailableProductTable(products) {
     const tableContents =
       tableComponent +
-      products.map((product) => {
-        return `<tr>
+      products
+        .map((product) => {
+          return `<tr>
             <td class="${CLASSES.productName}"${DATASETS.productName}="${product.name}">${product.name}</td>
-            </tr>
-            <tr>
             <td class="${CLASSES.productPrice}"${DATASETS.price}="${product.price}">${product.price}</td>
-            </tr>
-            <tr>
             <td class="${CLASSES.productQuantity}"${DATASETS.quantity}="${product.quantity}">${product.quantity}</td>
-            </tr>
-            <tr>
-            <button class="${CLASSES.purchaseButton}">${CONSTANTS.purchase}</button>
-            </tr>
-            `;
-      });
+            <td><button class="${CLASSES.purchaseButton}">${CONSTANTS.purchaseButtonText}</button></td>
+            </tr>`;
+        })
+        .join('');
     $(`#${IDS.availableProductTable}`).innerHTML = tableContents;
   },
 
