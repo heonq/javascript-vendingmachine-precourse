@@ -5,6 +5,7 @@ import { vendingMachineChargeView } from './vendingMachineCharge/vendingMachineC
 import { $ } from '../utils/index.js';
 import { IDS } from '../utils/Constants.js';
 import VendingMachineCharge from './vendingMachineCharge/VendingMachineCharge.js';
+import { ProductPurchaseView } from './productPurchase/productPurchaseView.js';
 
 export default class VendingMachineController {
   #productManage;
@@ -44,8 +45,13 @@ export default class VendingMachineController {
     vendingMachineChargeView.printHoldingAmount(this.#vendingMachineCharge);
   }
 
+  renderProductPurchase() {
+    ProductPurchaseView.printProductPurchaseComponent();
+  }
+
   handleButtons() {
     tabButtonsView.handleProductManageButton(this.renderProductManage.bind(this));
     tabButtonsView.handleVendingMachineChargeButton(this.renderVendingMachineCharge.bind(this));
+    tabButtonsView.handleProductPurchaseButton(this.renderProductPurchase.bind(this));
   }
 }
