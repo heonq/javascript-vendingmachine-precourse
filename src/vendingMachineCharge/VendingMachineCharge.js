@@ -4,11 +4,11 @@ import { $ } from '../../utils/index.js';
 import { Validator } from '../../utils/Validator.js';
 
 export default class VendingMachineCharge {
-  #holdingAmount;
+  #chargedAmount;
   #coinQuantity;
 
   constructor() {
-    this.#holdingAmount = 0;
+    this.#chargedAmount = 0;
     this.#coinQuantity = {
       [CONSTANTS.number500]: 0,
       [CONSTANTS.number100]: 0,
@@ -18,17 +18,17 @@ export default class VendingMachineCharge {
   }
 
   getAmountFromStore() {
-    if (Store.getItem(CONSTANTS.holdingAmountKey))
-      this.#holdingAmount = Store.getItem(CONSTANTS.holdingAmountKey);
+    if (Store.getItem(CONSTANTS.chargedAmountKey))
+      this.#chargedAmount = Store.getItem(CONSTANTS.chargedAmountKey);
   }
 
   setAMountOnStore() {
-    Store.setItem(CONSTANTS.holdingAmountKey, this.#holdingAmount);
+    Store.setItem(CONSTANTS.chargedAmountKey, this.#chargedAmount);
   }
 
   chargeAmount(amount) {
     this.getAmountFromStore();
-    this.#holdingAmount += amount;
+    this.#chargedAmount += amount;
     this.setAMountOnStore();
   }
 
@@ -70,7 +70,7 @@ export default class VendingMachineCharge {
       .sort((a, b) => b[0] - a[0])
       .map(([_, quantity]) => quantity);
   }
-  getHoldingAmount() {
-    return this.#holdingAmount;
+  getChargedAmount() {
+    return this.#chargedAmount;
   }
 }
