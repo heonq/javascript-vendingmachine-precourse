@@ -41,7 +41,6 @@ export default class VendingMachineCharge {
   }
 
   getRandomCoin(amount) {
-    this.getCoinQuantityFromStore();
     let leftOver = amount;
     while (leftOver > 0) {
       const randomNumber = MissionUtils.Random.pickNumberInList([10, 50, 100, 500]);
@@ -49,11 +48,17 @@ export default class VendingMachineCharge {
       this.#coinQuantity[randomNumber] += 1;
       leftOver -= randomNumber;
     }
+  }
+
+  handleRandomCoin(amount) {
+    this.getCoinQuantityFromStore();
+    this.getRandomCoin(amount);
     this.setCoinQuantityonStore();
   }
+
   handleVendingMachineCharge() {
     const amount = Number($(`#${IDS.vendingMachineChargeInput}`).value);
     this.chargeAmount(amount);
-    this.getRandomCoin(amount);
+    this.handleRandomCoin(amount);
   }
 }
