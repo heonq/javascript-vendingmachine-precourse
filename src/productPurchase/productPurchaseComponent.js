@@ -2,7 +2,7 @@ import { CONSTANTS, IDS } from '../../utils/Constants.js';
 
 export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer}">
 <p>${CONSTANTS.insertCoin}</p>
-<input id="${IDS.chargeInput}" value="number" />
+<input id="${IDS.chargeInput}" type="number" />
 <button id="${IDS.chargeButton}">${CONSTANTS.insert}</button>
 <p id="${IDS.chargeAmount}">${CONSTANTS.amountInserted}</p>
 <p>${CONSTANTS.availableProductStatus}</p>
