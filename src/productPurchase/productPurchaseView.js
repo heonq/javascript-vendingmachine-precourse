@@ -1,11 +1,13 @@
-import { productPurchaseComponent } from './productPurchaseComponent.js';
+import { productPurchaseComponent, tableComponent } from './productPurchaseComponent.js';
 import { $ } from '../../utils/index.js';
 import { CONSTANTS, CLASSES, IDS, DATASETS } from '../../utils/Constants.js';
 
 export const ProductPurchaseView = {
   addAvailableProductTable(products) {
-    const tableContents = products.map((product) => {
-      return `<tr>
+    const tableContents =
+      tableComponent +
+      products.map((product) => {
+        return `<tr>
             <td class="${CLASSES.productName}"${DATASETS.productName}="${product.name}">${product.name}</td>
             </tr>
             <tr>
@@ -18,8 +20,8 @@ export const ProductPurchaseView = {
             <button class="${CLASSES.purchaseButton}">${CONSTANTS.purchase}</button>
             </tr>
             `;
-    });
-    $(`#${IDS.availableProductTable}`).insertAdjacentHTML('beforeend', tableContents);
+      });
+    $(`#${IDS.availableProductTable}`).innerHTML = tableContents;
   },
 
   printProductPurchaseComponent(products) {

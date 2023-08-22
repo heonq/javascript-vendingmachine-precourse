@@ -7,10 +7,6 @@ export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer
 <p id="${IDS.chargeAmount}">${CONSTANTS.amountInserted}</p>
 <p>${CONSTANTS.availableProductStatus}</p>
 <table id="${IDS.availableProductTable}">
-<th>${CONSTANTS.productName}</th>
-<th>${CONSTANTS.price}</th>
-<th>${CONSTANTS.quantity}</th>
-<th>${CONSTANTS.purchase}</th>
 </table>
 <p>${CONSTANTS.change}</p>
 <button id="${IDS.returnButton}">${CONSTANTS.return}</button>
@@ -35,3 +31,8 @@ export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer
 </tr>
 </table></div>
 `;
+
+export const tableComponent = `<th>${CONSTANTS.productName}</th>
+<th>${CONSTANTS.price}</th>
+<th>${CONSTANTS.quantity}</th>
+<th>${CONSTANTS.purchase}</th>`;
