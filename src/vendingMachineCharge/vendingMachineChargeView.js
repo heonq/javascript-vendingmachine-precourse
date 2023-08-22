@@ -10,7 +10,7 @@ export const vendingMachineChargeView = {
     $(`#${IDS.vendingMachineChargeButton}`).addEventListener('click', () => {
       vendingMachineCharge.handleVendingMachineCharge();
       this.printCoinQuantity(vendingMachineCharge);
-      this.printchargedAmount(vendingMachineCharge);
+      this.printChargedAmount(vendingMachineCharge);
     });
   },
   printCoinQuantity(vendingMachineCharge) {
