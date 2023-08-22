@@ -49,6 +49,7 @@ export default class VendingMachineCharge {
       if (randomNumber > leftOver) continue;
       this.#coinQuantity[randomNumber] += 1;
       leftOver -= randomNumber;
+      console.log(leftOver);
     }
   }
 
@@ -62,5 +63,14 @@ export default class VendingMachineCharge {
     const amount = Number($(`#${IDS.vendingMachineChargeInput}`).value);
     this.chargeAmount(amount);
     this.handleRandomCoin(amount);
+  }
+
+  getCoinQuantity() {
+    return Object.entries(this.#coinQuantity)
+      .sort((a, b) => b[0] - a[0])
+      .map(([_, quantity]) => quantity);
+  }
+  getHoldingAmount() {
+    return this.#holdingAmount;
   }
 }
