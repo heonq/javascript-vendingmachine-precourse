@@ -33,6 +33,7 @@ export const CONSTANTS = Object.freeze({
   priceUnit: 10,
   holdingAmountKey: 'holdingAmount',
   coinQuantityKey: 'coinQuantity',
+  minChargeAmount: 10,
 });
 
 export const IDS = Object.freeze({
@@ -89,4 +90,5 @@ export const DATASETS = Object.freeze({
 export const ERROR_MESSAGE = Object.freeze({
   lessThanMin: `가격은 최소 ${CONSTANTS.minPrice}원 이상이어야 합니다.`,
   notDividedByUnit: `가격은 ${CONSTANTS.priceUnit}원으로 나누어 떨어져야 합니다.`,
+  lessThanMinCharge: `충전하는 금액은 최소 ${CONSTANTS.minChargeAmount}원 이상이어야 합니다.`,
 });
