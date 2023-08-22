@@ -49,7 +49,6 @@ export default class VendingMachineCharge {
       if (randomNumber > leftOver) continue;
       this.#coinQuantity[randomNumber] += 1;
       leftOver -= randomNumber;
-      console.log(leftOver);
     }
   }
 
