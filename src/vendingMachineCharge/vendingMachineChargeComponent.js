@@ -5,8 +5,8 @@ export const vendingMachineChargeComponent = `<div id=${IDS.vendingMachineContai
 <input id="${IDS.vendingMachineChargeInput}" type="number"/>
 <button id="${IDS.vendingMachineChargeButton}">${CONSTANTS.charge}</button>
 </form>
-<p id=${IDS.vendingMachineChargeAmount}>${CONSTANTS.holdingAmount}</p>
-<p>${CONSTANTS.holdingCoinStatus}</p>
+<p id=${IDS.vendingMachineChargeAmount}>${CONSTANTS.chargedAmount}</p>
+<p>${CONSTANTS.chargedCoinStatus}</p>
 <table>
     <th>${CONSTANTS.coin}</th>
     <th>${CONSTANTS.coinQuantityHeader}</th>

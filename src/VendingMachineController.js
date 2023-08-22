@@ -42,7 +42,7 @@ export default class VendingMachineController {
     vendingMachineChargeView.handleSubmit(this.#vendingMachineCharge);
     this.initForm();
     vendingMachineChargeView.printCoinQuantity(this.#vendingMachineCharge);
-    vendingMachineChargeView.printHoldingAmount(this.#vendingMachineCharge);
+    vendingMachineChargeView.printchargedAmount(this.#vendingMachineCharge);
   }
 
   renderProductPurchase() {

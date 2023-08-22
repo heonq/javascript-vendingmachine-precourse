@@ -10,7 +10,7 @@ export const vendingMachineChargeView = {
     $(`#${IDS.vendingMachineChargeButton}`).addEventListener('click', () => {
       vendingMachineCharge.handleVendingMachineCharge();
       this.printCoinQuantity(vendingMachineCharge);
-      this.printHoldingAmount(vendingMachineCharge);
+      this.printchargedAmount(vendingMachineCharge);
     });
   },
   printCoinQuantity(vendingMachineCharge) {
@@ -24,9 +24,9 @@ export const vendingMachineChargeView = {
     const coinQuantity = vendingMachineCharge.getCoinQuantity();
     coinIds.forEach((id, index) => ($(`#${id}`).innerText = coinQuantity[index]));
   },
-  printHoldingAmount(vendingMachineCharge) {
+  printChargedAmount(vendingMachineCharge) {
     vendingMachineCharge.getAmountFromStore();
     $(`#${IDS.vendingMachineChargeAmount}`).innerText =
-      CONSTANTS.holdingAmount + vendingMachineCharge.getHoldingAmount();
+      CONSTANTS.chargedAmount + vendingMachineCharge.getChargedAmount();
   },
 };
