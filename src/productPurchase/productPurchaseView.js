@@ -8,7 +8,7 @@ export const ProductPurchaseView = {
       tableComponent +
       products
         .map((product) => {
-          return `<tr>
+          return `<tr data-product-index="${product.index}">
             <td class="${CLASSES.productName}"${DATASETS.productName}="${product.name}">${product.name}</td>
             <td class="${CLASSES.productPrice}"${DATASETS.price}="${product.price}">${product.price}</td>
             <td class="${CLASSES.productQuantity}"${DATASETS.quantity}="${product.quantity}">${product.quantity}</td>
