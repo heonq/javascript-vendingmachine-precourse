@@ -6,14 +6,17 @@ import { $ } from '../utils/index.js';
 import { IDS } from '../utils/Constants.js';
 import VendingMachineCharge from './vendingMachineCharge/VendingMachineCharge.js';
 import { ProductPurchaseView } from './productPurchase/productPurchaseView.js';
+import ProductPurchase from './productPurchase/productPurchase.js';
 
 export default class VendingMachineController {
   #productManage;
   #vendingMachineCharge;
+  #productPurchase;
 
   constructor() {
     this.#productManage = new ProductManage();
     this.#vendingMachineCharge = new VendingMachineCharge();
+    this.#productPurchase = new ProductPurchase();
   }
 
   init() {
@@ -46,7 +49,9 @@ export default class VendingMachineController {
   }
 
   renderProductPurchase() {
-    ProductPurchaseView.printProductPurchaseComponent();
+    this.#productPurchase.getProductFromStore();
+    ProductPurchaseView.printProductPurchaseComponent(this.#productPurchase.getProducts());
+    ProductPurchaseView.handleInsertSubmit(this.#productPurchase);
   }
 
   handleButtons() {
