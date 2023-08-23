@@ -5,9 +5,11 @@ import { $ } from '../../utils/index.js';
 
 export default class ProductPurchase {
   #insertedAmount;
+  #products;
 
   constructor() {
     this.#insertedAmount = 0;
+    this.#products = [];
   }
 
   insertMoney() {
@@ -27,5 +29,15 @@ export default class ProductPurchase {
   }
   getInsertedAmount() {
     return this.#insertedAmount;
+  }
+  getProductFromStore() {
+    if (Store.getItem(CONSTANTS.productsKey)) this.#products = Store.getItem(CONSTANTS.productsKey);
+  }
+  setProductAtStore() {
+    Store.setItem(CONSTANTS.productsKey, this.#products);
+  }
+
+  getProducts() {
+    return this.#products;
   }
 }
