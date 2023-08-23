@@ -14,14 +14,15 @@ export default class ProductManage {
   }
 
   storeProduct() {
-    const [name, price, quantity] = [
+    const [name, price, quantity, index] = [
       $(`#${IDS.productNameInput}`).value,
       $(`#${IDS.productPriceInput}`).value,
       $(`#${IDS.productQuantityInput}`).value,
+      this.#products.length,
     ];
     if (!Validator.validateProductPrice(price)) return;
     if (name === '' || price === '' || quantity === '') return;
-    this.#products.push({ name, price, quantity });
+    this.#products.push({ name, price, quantity, index });
     Store.setItem(CONSTANTS.productsKey, this.#products);
   }
 
