@@ -23,4 +23,17 @@ export const ProductPurchaseView = {
     $(`#${IDS.container}`).innerHTML = productPurchaseComponent;
     this.addAvailableProductTable(products);
   },
+
+  printInsertedAmount(productPurchase) {
+    productPurchase.getInsertedAmountFromStore();
+    $(`#${IDS.chargeAmount}`).innerText =
+      CONSTANTS.amountInserted + productPurchase.getInsertedAmount();
+  },
+
+  handleInsertSubmit(productPurchase) {
+    $(`#${IDS.chargeButton}`).addEventListener('click', () => {
+      productPurchase.insertMoney();
+      this.printInsertedAmount(productPurchase);
+    });
+  },
 };

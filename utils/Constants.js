@@ -34,6 +34,7 @@ export const CONSTANTS = Object.freeze({
   chargedAmountKey: 'chargedAmount',
   coinQuantityKey: 'coinQuantity',
   minChargeAmount: 10,
+  insertedAmountKey: 'insertedAmount',
 });
 
 export const IDS = Object.freeze({
