@@ -1,5 +1,5 @@
 import { Store } from '../../utils/Store.js';
-import { CONSTANTS, IDS } from '../../utils/Constants.js';
+import { CLASSES, CONSTANTS, IDS } from '../../utils/Constants.js';
 import { Validator } from '../../utils/Validator.js';
 import { $ } from '../../utils/index.js';
 
@@ -39,5 +39,14 @@ export default class ProductPurchase {
 
   getProducts() {
     return this.#products;
+  }
+  handlePurchase(e) {
+    const index = e.target.closest('tr').dataset.productIndex;
+    if (this.#products[index].quantity === 0 || this.#insertedAmount < this.#products[index].price)
+      return;
+    this.#products[index].quantity -= 1;
+    this.#insertedAmount -= this.#products[index].price;
+    this.setProductAtStore();
+    this.setInsertedAmountOnStore();
   }
 }

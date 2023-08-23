@@ -36,4 +36,15 @@ export const ProductPurchaseView = {
       this.printInsertedAmount(productPurchase);
     });
   },
+  handlePurchaseButton(productPurchase) {
+    $(`#${IDS.availableProductTable}`).addEventListener('click', (e) => {
+      if (e.target.classList.contains(CLASSES.purchaseButton)) {
+        productPurchase.handlePurchase(e);
+        productPurchase.getInsertedAmountFromStore();
+        productPurchase.getProductFromStore();
+        this.addAvailableProductTable(productPurchase.getProducts());
+        this.printInsertedAmount(productPurchase);
+      }
+    });
+  },
 };

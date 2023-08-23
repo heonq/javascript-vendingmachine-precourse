@@ -50,8 +50,11 @@ export default class VendingMachineController {
 
   renderProductPurchase() {
     this.#productPurchase.getProductFromStore();
+    this.#productPurchase.getInsertedAmountFromStore();
     ProductPurchaseView.printProductPurchaseComponent(this.#productPurchase.getProducts());
+    ProductPurchaseView.printInsertedAmount(this.#productPurchase);
     ProductPurchaseView.handleInsertSubmit(this.#productPurchase);
+    ProductPurchaseView.handlePurchaseButton(this.#productPurchase);
   }
 
   handleButtons() {
