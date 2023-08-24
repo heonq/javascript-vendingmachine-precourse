@@ -16,17 +16,19 @@ export const vendingMachineChargeView = {
   printCoinQuantity(vendingMachineCharge) {
     vendingMachineCharge.getCoinQuantityFromStore();
     const coinIds = [
-      IDS.coin500Quantity,
-      IDS.coin100Quantity,
-      IDS.coin50Quantity,
-      IDS.coin10Quantity,
+      IDS.vendingMachineCoin500Quantity,
+      IDS.vendingMachineCoin100Quantity,
+      IDS.vendingMachineCoin50Quantity,
+      IDS.vendingMachineCoin10Quantity,
     ];
     const coinQuantity = vendingMachineCharge.getCoinQuantity();
-    coinIds.forEach((id, index) => ($(`#${id}`).innerText = coinQuantity[index]));
+    coinIds.forEach(
+      (id, index) => ($(`#${id}`).innerText = coinQuantity[index] + CONSTANTS.coinQuantityRow),
+    );
   },
   printChargedAmount(vendingMachineCharge) {
     vendingMachineCharge.getAmountFromStore();
     $(`#${IDS.vendingMachineChargeAmount}`).innerText =
-      CONSTANTS.chargedAmount + vendingMachineCharge.getChargedAmount();
+      CONSTANTS.chargedAmount + vendingMachineCharge.getChargedAmount() + CONSTANTS.unit;
   },
 };

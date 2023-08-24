@@ -45,7 +45,7 @@ export default class VendingMachineCharge {
     if (!Validator.validateChargeAmount(amount)) return;
     let leftOver = amount;
     while (leftOver > 0) {
-      const randomNumber = MissionUtils.Random.pickNumberInList([10, 50, 100, 500]);
+      const randomNumber = MissionUtils.Random.pickNumberInList(CONSTANTS.coinArray);
       if (randomNumber > leftOver) continue;
       this.#coinQuantity[randomNumber] += 1;
       leftOver -= randomNumber;

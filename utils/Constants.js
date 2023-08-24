@@ -35,6 +35,8 @@ export const CONSTANTS = Object.freeze({
   coinQuantityKey: 'coinQuantity',
   minChargeAmount: 10,
   insertedAmountKey: 'insertedAmount',
+  coinArray: [500, 100, 50, 10],
+  unit: '원',
 });
 
 export const IDS = Object.freeze({
