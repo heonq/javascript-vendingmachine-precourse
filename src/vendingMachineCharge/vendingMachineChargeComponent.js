@@ -12,19 +12,19 @@ export const vendingMachineChargeComponent = `<div id=${IDS.vendingMachineContai
     <th>${CONSTANTS.coinQuantityHeader}</th>
     <tr>
     <td>${CONSTANTS.coin500}</td>
-    <td id="${IDS.coin500Quantity}"></td>
+    <td id="${IDS.vendingMachineCoin500Quantity}"></td>
     </tr>
     <tr>
     <td>${CONSTANTS.coin100}</td>
-    <td id="${IDS.coin100Quantity}"></td>
+    <td id="${IDS.vendingMachineCoin100Quantity}"></td>
     </tr>
     <tr>
     <td>${CONSTANTS.coin50}</td>
-    <td id="${IDS.coin50Quantity}"></td>
+    <td id="${IDS.vendingMachineCoin50Quantity}"></td>
     </tr>
     <tr>
     <td>${CONSTANTS.coin10}</td>
-    <td id="${IDS.coin10Quantity}"></td>
+    <td id="${IDS.vendingMachineCoin10Quantity}"></td>
     </tr>
 </table></div>
 `;
