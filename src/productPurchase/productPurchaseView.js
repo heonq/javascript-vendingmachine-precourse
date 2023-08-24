@@ -47,4 +47,14 @@ export const ProductPurchaseView = {
       }
     });
   },
+  handleReturnButton(productPurchase) {
+    $(`#${IDS.returnButton}`).addEventListener('click', () => {
+      productPurchase.handleReturnButton();
+      const returnCoin = productPurchase.getReturnCoin();
+      CONSTANTS.coinArray.forEach((coin, index) => {
+        $(`#coin-${coin}-quantity`).innerText = returnCoin[index] + CONSTANTS.coinQuantityRow;
+      });
+      this.printInsertedAmount(productPurchase);
+    });
+  },
 };

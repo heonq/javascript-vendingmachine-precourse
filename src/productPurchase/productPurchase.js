@@ -6,10 +6,26 @@ import { $ } from '../../utils/index.js';
 export default class ProductPurchase {
   #insertedAmount;
   #products;
+  #coinQuantity;
+  #chargedAmount;
+  #returnCoin;
 
   constructor() {
     this.#insertedAmount = 0;
     this.#products = [];
+    this.#coinQuantity = {
+      [CONSTANTS.number500]: 0,
+      [CONSTANTS.number100]: 0,
+      [CONSTANTS.number50]: 0,
+      [CONSTANTS.number10]: 0,
+    };
+    this.#chargedAmount = 0;
+    this.#returnCoin = {
+      [CONSTANTS.number500]: 0,
+      [CONSTANTS.number100]: 0,
+      [CONSTANTS.number50]: 0,
+      [CONSTANTS.number10]: 0,
+    };
   }
 
   insertMoney() {
@@ -48,5 +64,55 @@ export default class ProductPurchase {
     this.#insertedAmount -= this.#products[index].price;
     this.setProductAtStore();
     this.setInsertedAmountOnStore();
+  }
+  getCoinQuantityFromStore() {
+    if (Store.getItem(CONSTANTS.coinQuantityKey))
+      this.#coinQuantity = Store.getItem(CONSTANTS.coinQuantityKey);
+  }
+  setCoinQuantityOnStore() {
+    Store.setItem(CONSTANTS.coinQuantityKey, this.#coinQuantity);
+  }
+
+  getChargedAmountFromStore() {
+    if (Store.getItem(CONSTANTS.chargedAmountKey))
+      this.#chargedAmount = Store.getItem(CONSTANTS.chargedAmountKey);
+  }
+  setChargedAmountOnStore() {
+    Store.setItem(CONSTANTS.chargedAmountKey, this.#chargedAmount);
+  }
+
+  handleReturnButton() {
+    this.handleCoinReturn();
+    this.handleAmount();
+  }
+
+  handleCoinReturn() {
+    let leftOver = this.#insertedAmount;
+    CONSTANTS.coinArray.forEach((coin) => {
+      if (coin * this.#coinQuantity[coin] > leftOver) {
+        this.#returnCoin[coin] = Math.floor(leftOver / coin);
+      }
+      if (coin * this.#coinQuantity[coin] <= leftOver)
+        this.#returnCoin[coin] = this.#coinQuantity[coin];
+      leftOver = leftOver - this.#returnCoin[coin] * coin;
+      this.#coinQuantity[coin] -= this.#returnCoin[coin];
+    });
+    this.setCoinQuantityOnStore();
+  }
+
+  handleAmount() {
+    this.#chargedAmount > this.#insertedAmount
+      ? (this.#chargedAmount -= this.#insertedAmount)
+      : (this.#chargedAmount = 0);
+    this.#insertedAmount = 0;
+    this.setInsertedAmountOnStore();
+    this.setChargedAmountOnStore();
+    this.setCoinQuantityOnStore();
+  }
+
+  getReturnCoin() {
+    return Object.entries(this.#returnCoin)
+      .sort((a, b) => b[0] - a[0])
+      .map(([_, quantity]) => quantity);
   }
 }
