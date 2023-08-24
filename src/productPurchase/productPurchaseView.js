@@ -26,8 +26,7 @@ export const ProductPurchaseView = {
 
   printInsertedAmount(productPurchase) {
     productPurchase.getInsertedAmountFromStore();
-    $(`#${IDS.chargeAmount}`).innerText =
-      CONSTANTS.amountInserted + productPurchase.getInsertedAmount();
+    $(`#${IDS.chargeAmount}`).innerText = productPurchase.getInsertedAmount();
   },
 
   handleInsertSubmit(productPurchase) {
