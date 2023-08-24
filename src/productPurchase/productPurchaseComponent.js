@@ -4,7 +4,7 @@ export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer
 <p>${CONSTANTS.insertCoin}</p>
 <input id="${IDS.chargeInput}" type="number" />
 <button id="${IDS.chargeButton}">${CONSTANTS.insert}</button>
-<p id="${IDS.chargeAmount}">${CONSTANTS.amountInserted}</p>
+<p>${CONSTANTS.amountInserted}<span id="${IDS.chargeAmount}"></span><span>${CONSTANTS.unit}</span></p>
 <p>${CONSTANTS.availableProductStatus}</p>
 <table id="${IDS.availableProductTable}">
 </table>
@@ -27,7 +27,7 @@ export const productPurchaseComponent = `<div id="${IDS.productPurchaseContainer
 </tr>
 <tr>
 <td>${CONSTANTS.coin10}</td>
-<td id="${IDS.coin100Quantity}"></td>
+<td id="${IDS.coin10Quantity}"></td>
 </tr>
 </table></div>
 `;
