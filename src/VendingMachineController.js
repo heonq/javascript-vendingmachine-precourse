@@ -2,8 +2,6 @@ import { tabButtonsView } from './tabButtons/tabButtonsView.js';
 import { productManageView } from './productManage/productManageView.js';
 import ProductManage from './productManage/productManage.js';
 import { vendingMachineChargeView } from './vendingMachineCharge/vendingMachineChargeView.js';
-import { $ } from '../utils/index.js';
-import { IDS } from '../utils/Constants.js';
 import VendingMachineCharge from './vendingMachineCharge/VendingMachineCharge.js';
 import { ProductPurchaseView } from './productPurchase/productPurchaseView.js';
 import ProductPurchase from './productPurchase/productPurchase.js';
